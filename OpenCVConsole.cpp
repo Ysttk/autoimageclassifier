@@ -1,12 +1,21 @@
 // OpenCVConsole.cpp : 定义控制台应用程序的入口点。
 //
 
+#ifndef MACOS
 #include "stdafx.h"
+#endif
+
 #include "opencv2/highgui/highgui.hpp"
-#include "opencv2\imgproc\imgproc.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 #include <opencv2/core/core.hpp>
 #include <iostream>
 #include <time.h>
+
+#ifdef MACOS
+#define sprintf_s sprintf
+#define _TCHAR char
+#define _tmain main
+#endif
 
 void TestCapture()
 {
